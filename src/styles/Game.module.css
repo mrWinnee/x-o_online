@@ -1,0 +1,51 @@
+.container{
+    padding: 20px ;
+    display: flex;
+    justify-content: center;
+}
+
+.gameBoard{
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.box{
+    border: 1px solid black;
+}
+
+.box:not(.box[player]):hover{
+    background-color: rgb(202, 202, 202);
+}
+
+.box[player='playerx']{
+    background-color: blue;
+}
+.box[player='playero']{
+    background-color: red;
+}
+
+.start_btn{
+    display: block;
+    width: 150px;
+    padding: 8px 0;
+    background-color: rgb(202, 202, 202);
+    text-align: center;
+    font-size: 2rem;
+}
+.start_btn:hover{
+    background-color: rgb(55, 54, 54);
+}
+
+.waiting{
+    color: black;
+    font-size: 1.6rem;
+    text-align: center;
+}
+.curPlayer{
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+}
