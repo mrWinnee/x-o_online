@@ -1,14 +1,12 @@
 
 
 import Head from 'next/head'
-import { Inter } from '@next/font/google'
 import { useState } from 'react'
 import styles from '../styles/Game.module.css'
 import { useRouter } from 'next/router'
 import { io } from 'socket.io-client'
 const socket = io.connect('http://localhost:8000')
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({gameBoxs}) {
 
@@ -140,7 +138,7 @@ export default function Home({gameBoxs}) {
 }
 
 
-export function getStaticProps(){
+export function getServerSideProps(){
   const gameBoxs = Array.from([...Array(9)], (x, i) =>({
     index: i,
     checked:false,
